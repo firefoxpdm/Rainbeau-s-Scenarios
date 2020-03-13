@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,7 @@ namespace RFScenarios_Code {
 		public override string SettingsCategory() { return "RFScenarios".Translate(); }
 		public override void DoSettingsWindowContents(Rect canvas) { Settings.DoWindowContents(canvas); }
 		public Controller(ModContentPack content) : base(content) {
-			HarmonyInstance harmony = HarmonyInstance.Create("net.rainbeau.rimworld.mod.scenarios");
+			Harmony harmony = new Harmony("net.rainbeau.rimworld.mod.scenarios");
 			harmony.PatchAll( Assembly.GetExecutingAssembly() );
 			Settings = GetSettings<Settings>();
 		}
@@ -130,7 +130,7 @@ namespace RFScenarios_Code {
 				}
 				FloatRange durationDays = new FloatRange(0.075f, 0.1f);
 				int num = Mathf.RoundToInt(durationDays.RandomInRange * 60000f);
-				GameCondition_Flashstorm gameConditionFlashstorm = (GameCondition_Flashstorm)GameConditionMaker.MakeCondition(GameConditionDefOf.Flashstorm, num, 0);
+				GameCondition_Flashstorm gameConditionFlashstorm = (GameCondition_Flashstorm)GameConditionMaker.MakeCondition(GameConditionDefOf.Flashstorm, num);
 				map.gameConditionManager.RegisterCondition(gameConditionFlashstorm);
 				Find.LetterStack.ReceiveLetter("RFScenarios.LetterLabelFlashstorm".Translate(), "RFScenarios.Flashstorm".Translate(), LetterDefOf.ThreatSmall, new TargetInfo(gameConditionFlashstorm.centerLocation.ToIntVec3, map, false), null);
 				if (map.weatherManager.curWeather.rainRate > 0.1f) {
@@ -179,7 +179,8 @@ namespace RFScenarios_Code {
 					SkyfallerMaker.SpawnSkyfaller(ThingDefOf.MeteoriteIncoming, things, intVec3, map);
 				}
 				LetterDef letterDef = (!things[0].def.building.isResourceRock ? LetterDefOf.NeutralEvent : LetterDefOf.PositiveEvent);
-				Find.LetterStack.ReceiveLetter("RFScenarios.LetterLabelMeteorite".Translate(), "RFScenarios.Meteorite".Translate(new object[] { things[0].def.label }), letterDef, new TargetInfo(intVec3, map, false), null);
+                String text = TranslatorFormattedStringExtensions.Translate("RFScenarios.Meteorite", things[0].def.label);
+				Find.LetterStack.ReceiveLetter("RFScenarios.LetterLabelMeteorite".Translate(), text, letterDef, new TargetInfo(intVec3, map, false), null);
 				return true;
 			}
 			else {
@@ -188,8 +189,8 @@ namespace RFScenarios_Code {
 				List<Thing> things = ThingSetMakerDefOf.RefugeePod.root.Generate();
 				IntVec3 intVec3 = DropCellFinder.RandomDropSpot(map);
 				Pawn pawn = this.FindPawn(things);
-				string str = "LetterLabelRefugeePodCrash".Translate();
-				string str1 = "RefugeePodCrash".Translate();
+				TaggedString str = new TaggedString("LetterLabelRefugeePodCrash".Translate());
+                TaggedString str1 = new TaggedString("RefugeePodCrash".Translate());
 				if (pawn.ageTracker.AgeBiologicalYears > 19 && pawn.ageTracker.AgeBiologicalYears < 36) {
 					if (Rand.Value < 0.33) {
 						pawn.SetFaction(Faction.OfPlayer);
@@ -259,13 +260,15 @@ namespace RFScenarios_Code {
 				int num = Mathf.CeilToInt(Mathf.Sqrt((float)mineablesCountRange)) + 2;
 				CellRect cellRect = CellRect.CenteredOn(x, num, num);
 				int num1 = 0;
-				CellRect.CellRectIterator iterator = cellRect.GetIterator();
-				while (!iterator.Done()) {
-					if (iterator.Current.InBounds(map) && iterator.Current.Standable(map)) {
-						num1++;
-					}
-					iterator.MoveNext();
-				}
+
+                foreach (IntVec3 current in cellRect)
+                {
+                    if (current.InBounds(map) && current.Standable(map))
+                    {
+                        num1++;
+                    }
+                }
+
 				return num1 >= mineablesCountRange;
 			});
 		}
@@ -296,7 +299,7 @@ namespace RFScenarios_Code {
 				}
 				FloatRange durationDays = new FloatRange(0.075f, 0.1f);
 				int num = Mathf.RoundToInt(durationDays.RandomInRange * 60000f);
-				GameCondition_Flashstorm gameConditionFlashstorm = (GameCondition_Flashstorm)GameConditionMaker.MakeCondition(GameConditionDefOf.Flashstorm, num, 0);
+				GameCondition_Flashstorm gameConditionFlashstorm = (GameCondition_Flashstorm)GameConditionMaker.MakeCondition(GameConditionDefOf.Flashstorm, num);
 				map.gameConditionManager.RegisterCondition(gameConditionFlashstorm);
 				Find.LetterStack.ReceiveLetter("RFScenarios.LetterLabelFlashstorm".Translate(), "RFScenarios.FlashstormTribal".Translate(), LetterDefOf.ThreatSmall, new TargetInfo(gameConditionFlashstorm.centerLocation.ToIntVec3, map, false), null);
 				if (map.weatherManager.curWeather.rainRate > 0.1f) {
@@ -319,7 +322,8 @@ namespace RFScenarios_Code {
 					SkyfallerMaker.SpawnSkyfaller(ThingDefOf.MeteoriteIncoming, list, intVec3, map);
 				}
 				LetterDef letterDef = (!list[0].def.building.isResourceRock ? LetterDefOf.NeutralEvent : LetterDefOf.PositiveEvent);
-				Find.LetterStack.ReceiveLetter("RFScenarios.LetterLabelMeteoriteTribal".Translate(), "RFScenarios.MeteoriteTribal".Translate(new object[] { list[0].def.label }), letterDef, new TargetInfo(intVec3, map, false), null);
+                String text = TranslatorFormattedStringExtensions.Translate("RFScenarios.MeteoriteTribal", list[0].def.label);
+                Find.LetterStack.ReceiveLetter("RFScenarios.LetterLabelMeteoriteTribal".Translate(), text, letterDef, new TargetInfo(intVec3, map, false), null);
 				return true;
 			}
 		}
@@ -332,13 +336,14 @@ namespace RFScenarios_Code {
 				int num = Mathf.CeilToInt(Mathf.Sqrt((float)mineablesCountRange)) + 2;
 				CellRect cellRect = CellRect.CenteredOn(x, num, num);
 				int num1 = 0;
-				CellRect.CellRectIterator iterator = cellRect.GetIterator();
-				while (!iterator.Done()) {
-					if (iterator.Current.InBounds(map) && iterator.Current.Standable(map)) {
-						num1++;
-					}
-					iterator.MoveNext();
-				}
+
+                foreach (IntVec3 current in cellRect)
+                {
+                    if (current.InBounds(map) && current.Standable(map))
+                    {
+                        num1++;
+                    }
+                }
 				return num1 >= mineablesCountRange;
 			});
 		}
@@ -452,13 +457,14 @@ namespace RFScenarios_Code {
 				int num = Mathf.CeilToInt(Mathf.Sqrt((float)mineablesCountRange)) + 2;
 				CellRect cellRect = CellRect.CenteredOn(x, num, num);
 				int num1 = 0;
-				CellRect.CellRectIterator iterator = cellRect.GetIterator();
-				while (!iterator.Done()) {
-					if (iterator.Current.InBounds(map) && iterator.Current.Standable(map)) {
-						num1++;
-					}
-					iterator.MoveNext();
-				}
+
+                foreach (IntVec3 current in cellRect)
+                {
+                    if (current.InBounds(map) && current.Standable(map))
+                    {
+                        num1++;
+                    }
+                }
 				return num1 >= mineablesCountRange;
 			});
 		}

@@ -2,7 +2,7 @@
 <Defs>
 
 	<FactionDef Abstract="True" Name="RFPlayerFactionBase">
-		<homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
+		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
 		<colorSpectrum>
 			<li>(0, 0.737, 0.847)</li>
 		</colorSpectrum>
@@ -20,7 +20,7 @@
 		<backstoryCategories>
 			<li>Civil</li>
 		</backstoryCategories>
-		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
 		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
 		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>		<geneticVariance>1</geneticVariance>
