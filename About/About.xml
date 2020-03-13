@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+	<name>[RF] Scenarios [1.0]</name>
+	<author>Rainbeau Flambe</author>
+	<url>https://ludeon.com/forums/index.php?topic=46165</url>
+	<targetVersion>1.0.0</targetVersion>
+	<description>(Last update: 12/05/2018)
+
+This mod just adds several scenarios for RimWorld.
+
+(1) Colonization Crash Course:
+
+"Young adults from dozens of planets were drawn together in an ambitious project to colonize a virgin world. A fleet was launched to carry them to their destiny, stocked with the supplies that would ensure their success.  
+
+"But one ship was lost along the way, victim of a fluke accident. Most of those it carried perished when it was destroyed, but a few found themselves stranded, alone and ill-equipped, on an unknown rimworld...."
+
+This is a variation of the "Crashlanded" default scenario, altered so that your colonists are all young adults with a slightly better than average chance of having beneficial character traits.
+
+To better simulate a crash landing, starting supplies don't include silver or a pet, and you'll only have wood immediately available if your pods happen to crush some trees as you land. There's also less steel and fewer components. But don't let that worry you, as you'll be encountering a fair number of falling ship chunks and "meteorites" composed of molten steel or components from your ship. These will fall frequently over the first few days, but will taper off as time goes on.
+
+If you're really lucky, a cargo pod with valuable supplies or even a refugee pod could land nearby soon after your arrival. Of course, if you're not so lucky, a large chunk of steel from the remains of your ship might land right on top of your stores of food and medicine.
+
+Oh, and be wary of fires. Meteorites and ship chunks now have a chance of starting fires when they land, and additionally, the ionization of the atmosphere from all the debris falling through it might cause a flashstorm or two.
+
+(2) Colonization Crash Course - Low Tech:
+
+This is the "Colonization Crash Course" scenario, but with one additional twist: none of your pawns start with the MacGyveresque ability to create complex power systems out of random junk and broken components. To put it in more specific game terms, you won't start with "Electricity" or any techs which depend upon it already known. Your colonists will need to do some research before they start building solar panels, batteries, air conditioners and the like.
+
+(3) Crashlanded - Low Tech:
+
+This is the default "Crashlanded" scenario with "Electricity" and any researches which depend upon it removed as starting techs, but otherwise unaltered.
+
+(4) Moon Fall:
+
+This is a tribal scenario. It's essentially the same as the default "Lost Tribe" scenario, except that your pawns are fleeing the devastation of their homeland caused by debris from the cataclysmic destruction of their planet's moon. The worst has passed, but you'll still have to contend with a lot of meteorites, and probably some flashstorms, especially in the early weeks of the game.
+
+NOTE: By default, this mod changes meteorites and ship chunks so that they have a chance of starting fires, and changes pods so that they have a chance of crushing trees, scattering wood about, if they land in appropriate biomes. Both of those changes affect all games, regardless of the scenario being played or the storyteller in use. But both of them can be turned off in the mod's options menu, if you don't like them.
+
+- Rainbeau Flambe (dburgdorf)
+
+=====
+
+Compatibility:
+
+All this mod really does is add a few scenarios (and a few scenario-specific incidents), so I doubt that it would conflict with anything. Adding the mod to or removing it from a game in progress should be safe.
+
+=====
+
+Credits:
+
+The mod utilizes Pardeike's "Harmony Patch Library." (No additional download is required, as the library is included with the mod.)
+
+The idea for "Moon Fall" came from Ellit's scenario, "The Moon that Fell from the Sky."
+
+=====
+
+License:
+
+If you're a modpack maker and want to include these scenarios in your pack, please feel free to do so. I ask only that you let me know about it. 
+
+=====
+
+If you have any (helpful) suggestions for improvement, please let me know!
+
+	</description>
+
+</ModMetaData>

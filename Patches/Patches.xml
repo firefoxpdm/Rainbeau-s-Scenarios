@@ -1,0 +1,55 @@
+﻿<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/StorytellerDef/comps</xpath>
+		<value>
+			<li Class="RFScenarios_Code.StorytellerCompProperties_SkyFall"/>
+			<li Class="RFScenarios_Code.StorytellerCompProperties_MoonFall"/>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ResearchProjectDef[defName = "ComplexFurniture"]/tags</xpath>
+		<value>
+			<li>RFClassicStartLT</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ResearchProjectDef[defName = "PassiveCooler"]/tags</xpath>
+		<value>
+			<li>RFClassicStartLT</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ResearchProjectDef[defName = "ComplexClothing"]/tags</xpath>
+		<value>
+			<li>RFClassicStartLT</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ResearchProjectDef[defName = "Stonecutting"]/tags</xpath>
+		<value>
+			<li>RFClassicStartLT</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
+		<xpath>Defs/ResearchProjectDef[defName = "Gaming"]/tags</xpath>
+		<value>
+			<li>RFClassicStartLT</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
+		<xpath>Defs/ResearchProjectDef[defName = "WorkBenches"]/tags</xpath>
+		<value>
+			<li>RFClassicStartLT</li>
+		</value>
+	</Operation>
+
+</Patch>

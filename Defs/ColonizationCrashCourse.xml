@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ScenarioDef>
+		<defName>ColonizationCrashCourse</defName>
+		<label>Colonization Crash Course</label>
+		<description>"Young adults from dozens of planets were drawn together in an ambitious project to colonize a virgin world. A fleet was launched to carry them to their destiny, stocked with the supplies that would ensure their success.  
+
+"But one ship was lost along the way, victim of a fluke accident. Most of those it carried perished when it was destroyed, but a few found themselves stranded, alone and ill-equipped, on an unknown rimworld...."
+
+=====
+
+This is a variation of the "Crashlanded" default scenario, altered so that your colonists are all young adults with a slightly better than average chance of having beneficial character traits.
+
+To better simulate a crash landing, starting supplies don't include silver or a pet, and you'll only have wood immediately available if your pods happen to crush some trees as you land. There's also less steel and fewer components. But don't let that worry you, as you'll be encountering a fair number of falling ship chunks and "meteorites" composed of molten steel or components from your ship. These will fall frequently over the first few days, but will taper off as time goes on.
+
+If you're really lucky, a cargo pod with valuable supplies or even a refugee pod could land nearby soon after your arrival. Of course, if you're not so lucky, a large chunk of steel from the remains of your ship might land right on top of your food and medicine.
+
+Oh, and be wary of fires. Meteorites and ship chunks have a chance of starting fires when they land, and additionally, the ionization of the atmosphere from all the debris falling through it might cause a flashstorm or two.
+
+=====</description>
+		<scenario>
+			<summary>You were supposed to be the founders of a new colony... but not like this.</summary>
+			<playerFaction>
+				<def>PlayerFaction</def>
+				<factionDef>PlayerColony</factionDef>
+			</playerFaction>
+			<parts>
+				<li Class="ScenPart_GameStartDialog">
+					<def>GameStartDialog</def>
+					<text>This isn't how it was supposed to be. You were supposed to wake from cryptosleep slowly and peacefully, with your ship safely in orbit around your new homeworld. Instead, you were woken abruptly, to the sound of blaring sirens and ripping metal. 
+
+You managed to make your way through the chaos to the escape pods, with only seconds to spare. But it was obvious that most of your fellow colonists weren't so lucky, and even many of those who were, were engulfed in the huge blast as your ship's drive systems finally exploded.
+
+Your pods landed on an anonymous rimworld. You found yourselves surrounded by the wreckage of your ship, with little in the way of useful supplies.
+
+This isn't how it was supposed to be. You were supposed to be part of a large, well-equipped colonization force, taming a virgin planet. Instead, you found yourselves alone and ill-provisioned, and likely facing more than just nature as an enemy....</text>
+					<textKey>GameStartDialog</textKey>
+					<closeSound>GameStartSting</closeSound>
+				</li>
+				<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+					<def>ConfigPage_ConfigureStartingPawns</def>
+					<pawnCount>3</pawnCount>
+					<pawnChoiceCount>5</pawnChoiceCount>
+				</li>
+				<li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+					<method>DropPods</method>
+				</li>
+				<li Class="ScenPart_PawnFilter_Age">
+					<def>PawnFilter_Age</def>
+					<allowedAgeRange>20~35</allowedAgeRange>
+				</li>
+				<li Class="ScenPart_ForcedHediff">
+					<def>ForcedHediff</def>
+					<chance>1</chance>
+					<context>PlayerStarter</context>
+					<hideOffMap>True</hideOffMap>
+					<hediff>CryptosleepSickness</hediff>
+					<severityRange>0.25~0.75</severityRange>
+				</li>
+				<li Class="ScenPart_ForcedTrait">
+					<def>ForcedTrait</def>
+					<chance>0.2</chance>
+					<context>PlayerStarter</context>
+					<trait>Industriousness</trait>
+					<degree>1</degree>
+				</li>
+				<li Class="ScenPart_ForcedTrait">
+					<def>ForcedTrait</def>
+					<chance>0.2</chance>
+					<context>PlayerStarter</context>
+					<trait>NaturalMood</trait>
+					<degree>1</degree>
+				</li>
+				<li Class="ScenPart_ForcedTrait">
+					<def>ForcedTrait</def>
+					<chance>0.2</chance>
+					<context>PlayerStarter</context>
+					<trait>Nerves</trait>
+					<degree>1</degree>
+				</li>
+				<li Class="ScenPart_ForcedTrait">
+					<def>ForcedTrait</def>
+					<chance>0.1</chance>
+					<context>PlayerStarter</context>
+					<trait>SpeedOffset</trait>
+					<degree>1</degree>
+				</li>
+				<li Class="ScenPart_ForcedTrait">
+					<def>ForcedTrait</def>
+					<chance>0.1</chance>
+					<context>PlayerStarter</context>
+					<trait>PsychicSensitivity</trait>
+					<degree>-1</degree>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MealSurvivalPack</thingDef>
+					<count>48</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MedicineIndustrial</thingDef>
+					<count>30</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>ComponentIndustrial</thingDef>
+					<count>3</count>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>ComponentIndustrial</thingDef>
+					<count>3</count>
+				</li>
+				<li Class="ScenPart_ScatterThingsAnywhere">
+					<def>ScatterThingsAnywhere</def>
+					<thingDef>ComponentIndustrial</thingDef>
+					<count>6</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Gun_BoltActionRifle</thingDef>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Gun_Revolver</thingDef>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MeleeWeapon_Knife</thingDef>
+					<stuff>Plasteel</stuff>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Apparel_FlakPants</thingDef>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Apparel_FlakVest</thingDef>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Apparel_AdvancedHelmet</thingDef>
+					<stuff>Plasteel</stuff>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>Steel</thingDef>
+					<count>200</count>
+				</li>
+				<li Class="ScenPart_ScatterThingsAnywhere">
+					<def>ScatterThingsAnywhere</def>
+					<thingDef>Steel</thingDef>
+					<count>450</count>
+				</li>
+				<li Class="ScenPart_ScatterThingsAnywhere">
+					<def>ScatterThingsAnywhere</def>
+					<thingDef>ShipChunk</thingDef>
+					<count>2</count>
+				</li>
+				<li Class="ScenPart_ScatterThingsAnywhere">
+					<def>ScatterThingsAnywhere</def>
+					<thingDef>ChunkSlagSteel</thingDef>
+					<count>36</count>
+				</li>
+				<li Class="ScenPart_CreateIncident">
+					<def>CreateIncident</def>
+					<incident>CCC_SkyFall</incident>
+					<intervalDays>0.04</intervalDays>
+				</li>
+			</parts>
+		</scenario>
+	</ScenarioDef>
+
+</Defs>

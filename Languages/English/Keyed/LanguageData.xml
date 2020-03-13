@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<RFScenarios>Rainbeau's Scenarios</RFScenarios>
+	
+	<RFScenarios.CrashBurn>Meteors Can Start Fires</RFScenarios.CrashBurn>
+	<RFScenarios.CrashBurnTip>If this option is checked, meteors (and ship chunks) will have a chance of starting fires when they strike the ground. This applies to all meteor strikes and ship chunk drops, regardless of the scenario being played or the storyteller in use.</RFScenarios.CrashBurnTip>
+	
+	<RFScenarios.PodTrees>Pods Can Crush Trees</RFScenarios.PodTrees>
+	<RFScenarios.PodTreesTip>If this option is checked, escape pods, refugee pods and cargo pods will crush trees, scattering wood about, if they land on a map with vegetation. How much wood, of course, will depend upon the biome. (There are more trees to crush in a forest, after all, than in a desert.) This applies to all pods in all games, regardless of the scenario being played or the storyteller in use.</RFScenarios.PodTreesTip>
+	
+	<RFScenarios.MustRestartGame>Note that in order for changes made here to fully take effect, the game must be restarted.</RFScenarios.MustRestartGame>
+	
+	<RFScenarios.MessageMeteorSwarm>A swarm of meteors -- possibly smaller pieces of your ship -- crosses the sky, burning up in the atmosphere.</RFScenarios.MessageMeteorSwarm>
+	<RFScenarios.MessageMeteorSwarmTribal>A swarm of meteors flame across the sky, but none crash to the ground near you.</RFScenarios.MessageMeteorSwarmTribal>
+
+	<RFScenarios.LetterLabelMeteorite>Large Ship Chunk</RFScenarios.LetterLabelMeteorite>
+	<RFScenarios.Meteorite>A lump of {0} just crashed to the ground. It was presumably once part of your ship, but the forces that ripped the ship apart, followed by the heat of uncontrolled reentry, have left nothing but a misshapen mass.</RFScenarios.Meteorite>
+
+	<RFScenarios.LetterLabelMeteoriteTribal>Meteorite</RFScenarios.LetterLabelMeteoriteTribal>
+	<RFScenarios.MeteoriteTribal>A large meteorite has struck ground in the area. It has left behind a lump of {0}.</RFScenarios.MeteoriteTribal>
+
+	<RFScenarios.LetterLabelFlashstorm>Flashstorm</RFScenarios.LetterLabelFlashstorm>
+	<RFScenarios.Flashstorm>Ionization in the atmosphere from the recent cascade of ship chunks and meteorites has caused a localized flashstorm. This can cause massive fires.</RFScenarios.Flashstorm>
+	<RFScenarios.FlashstormTribal>The gods are angry again, but instead of hurling rocks, they now hurl lightning. A flashstorm has begun. Beware of fires.</RFScenarios.FlashstormTribal>
+
+	<RFScenarios.RefugeePodCrash>You've detected an escape pod crashing hard nearby.\n\nThe occupant is an old acquaintance from your ship, who's agreed to join you.</RFScenarios.RefugeePodCrash>
+
+</LanguageData>

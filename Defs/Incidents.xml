@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<IncidentDef>
+		<defName>CCC_SkyFall</defName>
+		<label>skyfall</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>RFScenarios_Code.IncidentWorker_CCC_SkyFall</workerClass>
+		<baseChance>0.0</baseChance>
+	</IncidentDef>
+
+	<IncidentDef>
+		<defName>CCC_MoonFall</defName>
+		<label>moonfall</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>RFScenarios_Code.IncidentWorker_CCC_MoonFall</workerClass>
+		<baseChance>0.0</baseChance>
+	</IncidentDef>
+
+	<ThingDef ParentName="SkyfallerBase">
+		<defName>ShipChunkIncomingFlame</defName>
+		<label>ship chunk (incoming)</label>
+		<size>(2, 2)</size>
+		<skyfaller>
+			<shadowSize>(2.5, 2.5)</shadowSize>
+			<explosionRadius>2</explosionRadius>
+			<explosionDamage>Flame</explosionDamage>
+			<explosionDamageFactor>0.5</explosionDamageFactor>
+		</skyfaller>
+	</ThingDef>
+
+	<ThingDef ParentName="SkyfallerBase">
+		<defName>MeteoriteIncomingFlame</defName>
+		<label>meteorite (incoming)</label>
+		<size>(2, 2)</size>
+		<graphicData>
+			<texPath>Things/Skyfaller/Meteorite</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(10, 10)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<shadowSize>(3, 3)</shadowSize>
+			<explosionRadius>4</explosionRadius>
+			<explosionDamage>Flame</explosionDamage>
+			<rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
+			<speed>1.2</speed>
+		</skyfaller>
+	</ThingDef>
+
+</Defs>
